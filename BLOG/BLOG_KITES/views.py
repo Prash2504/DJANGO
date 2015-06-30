@@ -37,6 +37,5 @@ def services(request):
 
 
 def news_publications(request):
-        
-
-
+    news = NEWS()        
+    return render_to_response('News_Publications.html',locals())
