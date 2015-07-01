@@ -13,16 +13,19 @@ def MENU():
    
     return MENU_LISTS 
 
-def NEWS():
+def news_publications(request):
     News_Pub = [] 
     for news in News_Publications.objects.filter(Date__year="%s"%time.strftime("%Y"),Date__month="%s"%time.strftime("%m")).order_by(-Date):
          News_Pub.append(
-                  {  'Month':news.Month,
+                  {  'Month':news.Current_Month,
                      'Year' :news.Year,
                      'Data' :news.Data
                   }
              )
-    return News_Pub
+    print  News_Pub   
+    
+    return HttpResponse(News_Pub)
+    #return render_to_response('News & Publications.html',locals())
 
 def home(request):
    
@@ -36,6 +39,4 @@ def services(request):
     return render_to_response('Services.html',locals())
 
 
-def news_publications(request):
-    news = NEWS()        
-    return render_to_response('News_Publications.html',locals())
+

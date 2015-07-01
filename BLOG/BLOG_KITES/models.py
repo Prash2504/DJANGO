@@ -2,13 +2,26 @@ from django.db import models
 
 
 
-Months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
+Months = ( 
+            ("Jan","Jan"),
+            ("Feb","Feb"),
+            ("Mar","Mar"),
+            ("Apr","Apr"),
+            ("May","May"),
+            ("Jun","Jun"),
+            ("Jul","Jul"),
+            ("Aug","Aug"),
+            ("Sep","Sep"),
+            ("Oct","Oct"),
+            ("Nov","Nov"),
+            ("Dec","Dec"),
+        )
 
 # Create your models here.
 
 class Menu(models.Model):
     Name = models.CharField(max_length = 20)
-    pub_date = models.DateTimeField('pub_date' )
+    pub_date = models.DateTimeField("pub_date" )
 
     def __str__(self):
          return self.Name 
@@ -19,9 +32,9 @@ class Services(models.Model):
 
 
 class News_Publications(models.Model):
-    Month  = models.CharField(max_length = 20,choices = Months) 
+    Current_Month  = models.CharField("Month",max_length = 20,choices = Months) # 
     Year   = models.CharField(max_length = 6) 
     Data   = models.CharField(max_length = 200) 
-   
+    
     def __str__(self):
-        return Month_Year,Data   
+        return "%s %s"%(self.Current_Month,self.Year)   
