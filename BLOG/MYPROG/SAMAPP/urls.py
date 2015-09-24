@@ -10,7 +10,3 @@ urlpatterns = patterns( '',
                   url(r'Contact Us$',views.contact,name ='contact'),                  
                       )
 
- 
-
-
-

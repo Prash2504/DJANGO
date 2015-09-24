@@ -172,52 +172,27 @@
               <!-- Start news tab content -->
               <div class="tab-pane fade in active" id="news">                
                 <ul class="news_tab">
+                {% for news in news_home %}
                   <li>
                     <div class="media">
                       <div class="media-left">
-                        <a class="news_img" href="#">
+                        <a class="news_img">
                           <img class="media-object" src="/static/img/news.jpg" alt="img">
                         </a>
                       </div>
                       <div class="media-body">
-                       <a href="#">Dummy text of the printing and typesetting industry</a>
-                       <span class="feed_date">27.02.15</span>
+                       <p><strong>{{news.Data}} </strong></p> 
+                        <span class="feed_date">{{news.Updated}}{{news.Date}}</span>                                                                   
                       </div>
                     </div>                    
                   </li>
-                  <li>
-                    <div class="media">
-                      <div class="media-left">
-                        <a class="news_img" href="#">
-                          <img class="media-object" src="/static/img/news.jpg" alt="img">
-                        </a>
-                      </div>
-                      <div class="media-body">
-                       <a href="#">Dummy text of the printing and typesetting industry</a>
-                       <span class="feed_date">28.02.15</span>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="media">
-                      <div class="media-left">
-                        <a class="news_img" href="#">
-                          <img class="media-object" src="/static/img/news.jpg" alt="img">
-                        </a>
-                      </div>
-                      <div class="media-body">
-                       <a href="#">Dummy text of the printing and typesetting industry</a>
-                       <span class="feed_date">28.02.15</span>
-                      </div>
-                    </div>
-                  </li>
-                </ul>                
-                <a class="see_all" href="#">See All</a>
+                {% endfor %}    
               </div>
               <!-- Start notice tab content -->  
               <div class="tab-pane fade " id="notice">
                 <div class="single_notice_pane">
                   <ul class="news_tab"> 
+                  {% for notice in notice_home %}
                     <li>
                       <div class="media">
                         <div class="media-left">
@@ -226,37 +201,13 @@
                           </a>
                         </div>
                         <div class="media-body">
-                         <a href="#">Dummy text of the printing and typesetting industry</a>
-                         <span class="feed_date">27.02.15</span>
-                        </div>
-                      </div>                   
-                    </li>
-                   <!-- <li>
-                      <div class="media">
-                        <div class="media-left">
-                          <a class="news_img" href="#">
-                            <img class="media-object" src="/static/img/notice.jpg" alt="img">
-                          </a>
-                        </div>
-                        <div class="media-body">
-                         <a href="#">Dummy text of the printing and typesetting industry</a>
-                         <span class="feed_date">28.02.15</span>             
+                        <p><strong>{{notice.Data}} </strong></p> 
+                        <span class="feed_date">{{notice.Updated}}{{notice.Date}}</span>                                           
                         </div>
                       </div>
                     </li>
-                    <li>
-                      <div class="media">
-                        <div class="media-left">
-                          <a class="news_img" href="#">
-                            <img class="media-object" src="/static/img/notice.jpg" alt="img">
-                          </a>
-                        </div>
-                        <div class="media-body">
-                         <a href="#">Dummy text of the printing and typesetting industry</a>
-                         <span class="feed_date">28.02.15</span>             
-                        </div>
-                      </div>
-                    </li> -->                       
+                    {% endfor %}                 
+                                          
                   </ul>
                   <ul class="news_tab">
                     <!-- <li>
@@ -314,9 +265,8 @@
                         </a>
                       </div>
                       <div class="media-body">
-                      <!-- <h3> We are back with so many new things </h3> --> 
                         <a href="Events">{{event.Data}} </a> 
-                        <span class="feed_date">{{event.Date}}</span>                                           
+                        <span class="feed_date">{{event.Updated}}{{event.Date}}</span>                                           
                     </div>
                     </div>
                     {% endfor %}
@@ -405,30 +355,32 @@
                 <!-- START SINGLE SKILL-->
                 <div class="col-lg-3 col-md-3 col-sm-3">
                  <div class="single_skill wow fadeInUp">
-                   <div id="myStat" data-dimension="150" data-text="40%" data-info="" data-width="10" data-fontsize="25" data-percent="35" data-fgcolor="#999" data-bgcolor="#fff"  data-icon="fa-task"></div>
+               {% for Value in values_home %} 
+                 <div id="myStat" data-dimension="150" data-text="{{Value.Corparate}}" data-info="" data-width="10" data-fontsize="25" data-percent="35" data-fgcolor="#999" data-bgcolor="#fff"  data-icon="fa-task"></div>
                     <h4>Corperate Engagement</h4>                      
                   </div>
                 </div>
                 <!-- START SINGLE SKILL-->
                 <div class="col-lg-3 col-md-3 col-sm-3">
                   <div class="single_skill wow fadeInUp">
-                    <div id="myStathalf2" data-dimension="150" data-text="60%" data-info="" data-width="10" data-fontsize="25" data-percent="60" data-fgcolor="#999" data-bgcolor="#fff"  data-icon="fa-task"></div>
+                    <div id="myStathalf2" data-dimension="150" data-text="{{Value.Success}}" data-info="" data-width="10" data-fontsize="25" data-percent="60" data-fgcolor="#999" data-bgcolor="#fff"  data-icon="fa-task"></div>
                     <h4>Success Rate</h4>
                   </div>
                 </div>
                 <!-- START SINGLE SKILL-->
                 <div class="col-lg-3 col-md-3 col-sm-3">                 
                   <div class="single_skill wow fadeInUp">
-                    <div id="myStat2" data-dimension="150" data-text="100%" data-info="" data-width="10" data-fontsize="25" data-percent="100" data-fgcolor="#999" data-bgcolor="#fff"  data-icon="fa-task"></div>
+                    <div id="myStat2" data-dimension="150" data-text="{{Value.Student}}" data-info="" data-width="10" data-fontsize="25" data-percent="100" data-fgcolor="#999" data-bgcolor="#fff"  data-icon="fa-task"></div>
                     <h4>Student Engagement</h4>
                   </div>
                 </div>
                 <!-- START SINGLE SKILL-->
                 <div class="col-lg-3 col-md-3 col-sm-3">                 
                   <div class="single_skill wow fadeInUp">
-                    <div id="myStat3" data-dimension="150" data-text="30%" data-info="" data-width="10" data-fontsize="25" data-percent="30" data-fgcolor="#999" data-bgcolor="#fff"  data-icon="fa-task"></div>
+                    <div id="myStat3" data-dimension="150" data-text="{{Value.Training}}" data-info="" data-width="10" data-fontsize="25" data-percent="30" data-fgcolor="#999" data-bgcolor="#fff"  data-icon="fa-task"></div>
                     <h4>Trainings </h4>
                   </div>
+                {% endfor %}   
                 </div>
               </div>
             </div>            
@@ -613,7 +565,7 @@
           <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-6">
               <div class="footer_bootomLeft">
-                <p> &copy; Copyright <a href="http://wpfreeware.com/">Kites India.</a> All Rights Reserved</p>
+                <p> &copy; Copyright <a href="#">Kites India.</a> All Rights Reserved</p>
               </div>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6">

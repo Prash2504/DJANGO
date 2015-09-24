@@ -976,12 +976,35 @@ div[data-dimension] {
   background-size: 100% 100%;
   display: inline;
   float: left;
+  height: 550px;
+  margin-top: 77px;
+  padding: 118px 0;
+  text-align: center;
+  width: 100%;
+  
+}
+
+#imgeventBanner {
+  background-image: url("img/Top_banners_event.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  display: inline;
+  float: left;
   height: 300px;
   margin-top: 77px;
   padding: 118px 0;
   text-align: center;
   width: 100%;
+  
 }
+#imgeventBanner h2 {
+  color: #fff;
+  font-size: 72px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+}
+
 #imgBanner h2 {
   color: #fff;
   font-size: 72px;
@@ -989,6 +1012,29 @@ div[data-dimension] {
   text-align: center;
   text-transform: uppercase;
 }
+
+#imgcontactBanner {
+  background-image: url("img/Contactus.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  display: inline;
+  float: left;
+  height: 500px;
+  margin-top: 77px;
+  padding: 118px 0;
+  text-align: center;
+  width: 100%;
+  
+}
+#imgcontactBanner h2 {
+  color: #fff;
+  font-size: 72px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+
 #courseArchive{
   float: left;
   display: inline;
